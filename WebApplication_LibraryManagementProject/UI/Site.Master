@@ -1,0 +1,80 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site.master.cs" Inherits="WebApplication_LibraryManagementProject.UI.Site" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <title>MOH State Library</title>
+    <link href="../Content/css/Site.css" rel="stylesheet" />
+    <link href="../Content/css/bootstrap.css" rel="stylesheet" />
+    <link href="../Content/css/jquery-ui.css" rel="stylesheet" />
+    <link href="../Content/fontawesome/css/all.css" rel="stylesheet" />
+    <link href="../Content/css/dataTables.jqueryui.css" rel="stylesheet" />
+    <script src="../Content/js/jquery-3.4.1.js"></script>
+    <script src="../Content/js/jquery-ui-1.12.1.js"></script>
+    <script src="../Content/js/jquery.dataTables.js"></script>
+    <script src="../Content/js/jquery.validate.js"></script>
+    <script src="../Content/js/jquery.validate.unobtrusive.js"></script>
+    <script src="../Content/js/popper.js"></script>
+    <script src="../Content/js/bootstrap.js"></script>
+
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <!--NavBar-->
+        <nav class="navbar navbar-expand-lg navbar-light bg-light sticky-top">
+            <a href="#" class="navbar-brand">
+                <img src="../imgs/1.jpg"  width="40" height="40" />
+                <b>MOH State Library</b>
+            </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+ 
+                       
+ 
+                 <div class="collapse navbar-collapse d-flex justify-content-end" id="navbarSupportedContent">
+                   <ul class="navbar-nav d-flex justify-content-end">
+                        <li class="nav-item active">
+                            <a class="nav-link" href="Homepage.aspx">Home</a>
+                        </li>
+                        <li class="nav-item active">
+                            <a class="nav-link" href="AboutUs.aspx">About Us</a>
+                        </li>
+                        <li class="nav-item active">
+                        <asp:LinkButton class="nav-link" ID="ViewBooksNavLinkButton" runat="server" href="ViewBooks.aspx">ViewBooks</asp:LinkButton></li>
+                    
+                        <li class="nav-item active">
+                            <a class="nav-link" href="ContactUs.aspx">Contact Us</a>
+                        </li>
+                        <asp:LinkButton class="nav-link" ID="SignUpNavLinkButton" runat="server" OnClick="SignUpNavLinkButton_Click">Sign Up</asp:LinkButton></li>
+                   <li class="nav-item">
+                            <asp:LinkButton class="nav-link" ID="UserLoginNavLinkButton" runat="server" OnClick="UserLoginNavLinkButton_Click">User Login</asp:LinkButton>
+                        <li class="nav-item active">
+                            </li><asp:LinkButton class="nav-link" ID="LogoutNavLinkButton" runat="server" OnClick="LogoutNavLinkButton_Click" >Logout</asp:LinkButton></li>
+                    <li class="nav-item">
+                             <asp:LinkButton class="nav-link" type="text" ID="HelloUserNavLinkButton" runat="server" >Hello user</asp:LinkButton></li>
+                </ul>
+            </div>
+        </nav>
+
+        <%--Main Content Place Holder--%>
+        <div class="body-content">
+            <asp:ContentPlaceHolder ID="body" runat="server">
+            </asp:ContentPlaceHolder>
+        </div>
+         <footer class="footer-copyright text-center <%--fixed-bottom--%>">
+            <div class="row footer1">
+                <div class="col text-center">
+                    <asp:LinkButton class="footerlinks" ID="AdminLoginFooterLinkButton" runat="server" OnClick="AdminLoginFooterLinkButton_Click">Admin Login</asp:LinkButton>
+                </div>
+            </div>
+<footer>
+      <h2 class="p-3 bg-success text-white text-center">MOH State Library</h2>   
+ </footer> 
+    </form>
+</body>
+</html>
+
